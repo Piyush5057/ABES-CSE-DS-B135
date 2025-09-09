@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Items</title>
+  <style>
+    .container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .item {
+      background-color: rgb(255, 102, 0);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      width: 150px;
+    }
+
+    .item img {
+      border-radius: 50%;
+      height: 80px;
+      width: 70px;
+      margin-bottom: 10px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .button-group button {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: white;
+      color: rgb(255, 102, 0);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button-group button:hover {
+      background-color: rgb(255, 204, 153);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">
+      <img src="chopped-salad.jpg" alt="Salad">
+      <div>Salad</div>
+      <div class="button-group">
+        <button>Buy Salad</button>
+        <button>Add To Cart</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="pexels-chanwalrus-1059905.jpg" alt="Fruits & Veggies">
+      <div>Fruits & Veggies</div>
+      <div class="button-group">
+        <button>Buy Fruits & Veggies</button>
+        <button>Add To Cart</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="9612660.png" alt="Coffee">
+      <div>Coffee</div>
+      <div class="button-group">
+        <button>Buy Coffee</button>
+        <button>Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
