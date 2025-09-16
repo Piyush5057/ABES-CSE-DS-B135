@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        #PP {
+            border: 5px solid black;
+            height: 400px;
+            width: 400px;
+            background-color: orange;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #counter {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        button {
+            font-size: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="PP">
+        <img src="download (2).png"  height="100px" width="100px">
+        <h3>Counter App</h3>
+        <div id="counter">0</div>
+        <div>
+            <button onclick="increase()">+</button>
+            <button onclick="decrease()">-</button>
+        </div>
+    </div>
+
+  <script>
+    let count = 0;
+
+    function updateDisplay() {
+        document.getElementById("counter").innerText = count;
+    }
+
+    function increase() {
+        if (count < 10) {
+            count++;
+            updateDisplay();
+        } else {
+            alert("Max limit reached");
+        }
+    }
+
+    function decrease() {
+        if (count > 0) {
+            count--;
+            updateDisplay();
+        } else {
+            alert("Min limit reached");
+        }
+    }
+</script>
+
+</body>
+</html>
