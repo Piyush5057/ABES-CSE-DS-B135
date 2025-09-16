@@ -5,12 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+ <style>
+    #p{
+        border: 5px solid black;
+        height: 300px;
+        width: 300px;
+        background-color: bisque;
+    }
+ </style>
 <body>
+    <div id="p">
+        <button onclick="abes()">click</button>
+        <p id="ppp"></p>
+    </div>
+
     <script>
+        function abes(){
+            document.getElementById("ppp").innerHTML=" <h1> Hello  </h1>";
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script>
         function abes(){
             document.write("Python Programming")
         }
         abes();
-    </script>
+    </script> -->
 </body>
 </html>
