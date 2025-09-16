@@ -1,70 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter App</title>
-    <style>
-        #PP {
-            border: 5px solid black;
-            height: 400px;
-            width: 400px;
-            background-color: orange;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Counter App</title>
+  <style>
+    #PP {
+      border: 5px solid black;
+      height: 400px;
+      width: 400px;
+      background-color: orange;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
 
-        #counter {
-            font-size: 60px;
-            font-weight: bold;
-        }
+    #counter {
+      font-size: 60px;
+      font-weight: bold;
+    }
 
-        button {
-            font-size: 30px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-    </style>
+    button {
+      font-size: 25px;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .img-container {
+      border: 5px solid black;
+      height: 400px;
+      width: 400px;
+      background-color: greenyellow;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .img-container img {
+      max-height: 300px;
+      max-width: 300px;
+    }
+  </style>
 </head>
 <body>
-    <div id="PP">
-        <img src="download (2).png"  height="100px" width="100px">
-        <h3>Counter App</h3>
-        <div id="counter">0</div>
-        <div>
-            <button onclick="increase()">+</button>
-            <button onclick="decrease()">-</button>
-        </div>
+
+  <div id="PP">
+    <img src="download (2).png" height="100px" width="100px" />
+    <h3>Counter App</h3>
+    <div id="counter">0</div>
+    <div>
+      <button onclick="increase()">+</button>
+      <button onclick="decrease()">-</button>
+      <button onclick="reset()">Reset</button>
     </div>
+  </div>
+
+  <br/>
+
+  <div class="img-container">
+    <img src="R.jpeg" alt="Image 1" id="img1" />
+    <button onclick="hide('img1')">Hide</button>
+  </div>
+
+  <br/>
+
+  <div class="img-container">
+    <img src="9612660.png" alt="Image 2" id="img2" />
+    <button onclick="hide('img2')">Hide</button>
+    <button onclick="changeImage('img2', 'download (2).png')">Change Image</button>
+  </div>
 
   <script>
     let count = 0;
 
-    function updateDisplay() {
-        document.getElementById("counter").innerText = count;
+    function updateCounter() {
+      document.getElementById("counter").innerText = count;
     }
 
     function increase() {
-        if (count < 10) {
-            count++;
-            updateDisplay();
-        } else {
-            alert("Max limit reached");
-        }
+      if (count < 10) {
+        count++;
+        updateCounter();
+      } else {
+        alert("Max limit reached");
+      }
     }
 
     function decrease() {
-        if (count > 0) {
-            count--;
-            updateDisplay();
-        } else {
-            alert("Min limit reached");
-        }
+      if (count > 0) {
+        count--;
+        updateCounter();
+      } else {
+        alert("Min limit reached");
+      }
     }
-</script>
+
+    function reset() {
+      count = 0;
+      updateCounter();
+    }
+
+    function hide(id) {
+      const img = document.getElementById(id);
+      if (img) img.style.display = "none";
+    }
+
+    function changeImage(id, newSrc) {
+      const img = document.getElementById(id);
+      if (img) img.src = newSrc;
+    }
+  </script>
 
 </body>
 </html>
