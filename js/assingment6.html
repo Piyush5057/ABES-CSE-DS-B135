@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Students by Branch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #ffffff;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: rgb(12, 110, 215);
+      border-radius: 10px;
+      width: 300px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    <div class="card" id="card-it">
+      <h3>IT Branch</h3>
+    </div>
+    <div class="card" id="card-me">
+      <h3>ME Branch</h3>
+    </div>
+  </div>
+
+  <script>
+    const students = [
+      { Name: "A", class: "btech", Branch: "IT", RollNo: 1 },
+      { Name: "B", class: "btech", Branch: "IT", RollNo: 2 },
+      { Name: "C", class: "btech", Branch: "IT", RollNo: 3 },
+      { Name: "D", class: "btech", Branch: "ME", RollNo: 4 },
+      { Name: "E", class: "btech", Branch: "ME", RollNo: 5 },
+      { Name: "F",class: "btech", Branch: "ME",RollNo:6}
+    ];
+
+    const cardIT = document.getElementById("card-it");
+    const cardME = document.getElementById("card-me");
+
+    students.forEach(student => {
+        
+      const studentInfo = `
+        <p><strong>Name:</strong> ${student.Name}</p>
+        <p><strong>Roll No:</strong> ${student.RollNo}</p>
+        <hr>
+      `;
+      if (student.Branch === "IT") {
+        cardIT.innerHTML += studentInfo;
+      } else if (student.Branch === "ME") {
+        cardME.innerHTML += studentInfo;
+      }
+    });
+  </script>
+
+</body>
+</html>
