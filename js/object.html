@@ -8,12 +8,13 @@
 <body>
     <p id="pp"></p>
     <script>
-        const person={
+        const person= new Object({
             firstname:'college',
             lastname:'name',
             age:33
-        }
-        document.getElementById('pp').innerHTML=person.lastname;
+        })
+        document.getElementById('pp').innerHTML=person.firstname;
+        
     </script>
 </body>
 </html>
